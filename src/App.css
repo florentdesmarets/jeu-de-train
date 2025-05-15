@@ -1,0 +1,244 @@
+/* -------- Base -------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Press Start 2P", cursive, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background 0.5s ease;
+}
+
+/* -------- Container principal -------- */
+.app-container {
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* -------- Thèmes -------- */
+.app-container.light {
+  background-color: #ffffff;
+  color: #111;
+}
+
+.app-container.dark {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+/* -------- Titre -------- */
+h1 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+/* -------- Pseudo (Form) -------- */
+.name-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.name-entry label {
+  font-size: 0.9rem;
+}
+
+.name-entry input {
+  padding: 8px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  font-family: inherit;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.name-entry button {
+  background-color: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.name-entry button:hover {
+  background-color: #4834d4;
+}
+
+/* -------- ScoreBoard -------- */
+.scoreboard {
+  background-color: #ffeaa7;
+  border: 2px solid #fdcb6e;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 20px;
+  font-size: 0.75rem;
+  color: #2d3436;
+}
+
+.scoreboard h3 {
+  margin: 8px 0 4px;
+}
+
+.scoreboard ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scoreboard li {
+  padding: 2px 0;
+}
+
+/* -------- Meilleurs joueurs -------- */
+.top-players {
+  margin-top: 10px;
+  font-size: 0.7rem;
+  background-color: #dfe6e9;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: left;
+  color: #2d3436;
+}
+
+.top-players h4 {
+  margin: 0 0 6px;
+  font-size: 0.8rem;
+}
+
+.top-players ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.top-players li {
+  margin-bottom: 4px;
+}
+
+/* -------- Canvas -------- */
+canvas {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border: 3px solid #2d3436;
+  border-radius: 12px;
+  background-color: #1e272e;
+}
+.resultColor {
+  color: rgb(0, 213, 255);
+  font-size: 1.5rem;
+}
+
+/* -------- Bouton Rejouer -------- */
+.restart-btn {
+  margin-top: 20px;
+  background-color: #00b894;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.restart-btn:hover {
+  background-color: #019875;
+}
+
+/* -------- Toggle Thème -------- */
+.theme-toggle {
+  background-color: #0984e3;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #40739e;
+}
+
+/* -------- Bouton Reset caché -------- */
+.reset-scores-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #d63031;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 0.75rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.reset-scores-btn.show {
+  opacity: 0.85;
+  pointer-events: auto;
+}
+
+.reset-scores-btn:hover {
+  background-color: #c0392b;
+}
+
+/* -------- Responsive -------- */
+@media (max-width: 500px) {
+  .app-container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.1rem;
+  }
+
+  .restart-btn,
+  .theme-toggle {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+
+  .name-entry input {
+    font-size: 0.75rem;
+  }
+
+  .reset-scores-btn {
+    font-size: 0.65rem;
+    padding: 8px 12px;
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+/* -------- Background visuel jour/nuit -------- */
+body.light {
+  background-image: url("/assets/day-bg.png"); /* soleil, ciel bleu */
+}
+
+body.dark {
+  background-image: url("/assets/night-bg.png"); /* lune, étoiles */
+}
+
+
