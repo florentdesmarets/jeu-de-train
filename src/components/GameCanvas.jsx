@@ -33,10 +33,10 @@ const GameCanvas = ({ onScoreChange, onGameOver }) => {
     const ctx = canvas.getContext("2d");
 
     const trainImage = new Image();
-    trainImage.src = "/assets/train.png";
+    trainImage.src = `${import.meta.env.BASE_URL}assets/train.png`;
 
     const obstacleImage = new Image();
-    obstacleImage.src = "/assets/obstacles/man.png";
+    obstacleImage.src = `${import.meta.env.BASE_URL}assets/man.png`;
 
     let frameCount = 0;
     let hasStarted = false;
@@ -76,7 +76,7 @@ const GameCanvas = ({ onScoreChange, onGameOver }) => {
           height: randomHeight,
           image: new Image()
         };
-        obs.image.src = "../public/assets/man.png";
+        obs.image.src = `${import.meta.env.BASE_URL}assets/man.png`;
         obstacles.current.push(obs);
       }
 

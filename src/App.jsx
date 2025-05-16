@@ -45,8 +45,9 @@ export default function App() {
       {!hasStarted ? (
   <>
     <img
-      src="./public/assets/logo.png"
-      alt="Logo SNCF"
+    className="logo"
+      src = {`${import.meta.env.BASE_URL}assets/logo.png`}
+      alt="Logo "
       style={{ width: "120px", marginBottom: "20px" }}
     />
     <h3>Le jeu de plateforme</h3>
@@ -59,6 +60,7 @@ export default function App() {
         required
       />
       <button type="submit">Commencer</button>
+      <label>Un jeu fais par le Dem</label>
     </form>
   </>
 ) : (
@@ -66,7 +68,7 @@ export default function App() {
           <button className="theme-toggle" onClick={toggleTheme}>
             Mode {theme === "light" ? "Nuit 🌙" : "Jour ☀️"}
           </button>
-          <h1>SNCF LE JEU</h1>
+          <h1>LE JEU DU TRAIN</h1>
           <ScoreBoard score={score} playerName={playerName} />
           <GameCanvas
             key={gameKey}

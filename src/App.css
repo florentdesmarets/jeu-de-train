@@ -241,4 +241,6 @@ body.dark {
   background-image: url("/assets/night-bg.png"); /* lune, étoiles */
 }
 
-
+.logo {
+  border-radius: 5%;
+}
